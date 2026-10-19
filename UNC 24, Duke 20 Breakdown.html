@@ -1,0 +1,516 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>UNC 24, Duke 20 Breakdown</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+<style>
+/* Layout: scoreboard hero, then sections with a sticky heading rail beside a 42rem reading column; wide modules (box score, report card) span the full width. */
+:root {
+  --bg: #F3F6F9;
+  --surface: #FFFFFF;
+  --fg: #14202E;
+  --muted: #53647A;
+  --rule: #D3DCE6;
+  --unc: #4B9CD3;
+  --unc-ink: #1D5C91;
+  --opp: #8D9AAB;
+  --hero-bg: #0E2340;
+  --hero-fg: #F2F6FA;
+  --hero-muted: #9DB3CC;
+  --hero-rule: #2A4468;
+  --g-bplus-bg: #1F7A5A; --g-bplus-fg: #FFFFFF;
+  --g-b-bg: #2B6CA3;     --g-b-fg: #FFFFFF;
+  --g-bminus-bg: #5E7691; --g-bminus-fg: #FFFFFF;
+  --g-cplus-bg: #9A6212; --g-cplus-fg: #FFFFFF;
+  --font-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Newsreader", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B1521; --surface: #122033; --fg: #E2E9F1; --muted: #93A5BA; --rule: #25364B;
+    --unc: #6DB4E6; --unc-ink: #8CC4EE; --opp: #6B7C92;
+    --hero-bg: #07111F; --hero-fg: #F2F6FA; --hero-muted: #8FA6C0; --hero-rule: #1F3552;
+    --g-bplus-bg: #47C79B; --g-bplus-fg: #05231A;
+    --g-b-bg: #7FB8E8;     --g-b-fg: #0A2036;
+    --g-bminus-bg: #9BB0C8; --g-bminus-fg: #121F2E;
+    --g-cplus-bg: #E0A94A; --g-cplus-fg: #2A1B04;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B1521; --surface: #122033; --fg: #E2E9F1; --muted: #93A5BA; --rule: #25364B;
+  --unc: #6DB4E6; --unc-ink: #8CC4EE; --opp: #6B7C92;
+  --hero-bg: #07111F; --hero-fg: #F2F6FA; --hero-muted: #8FA6C0; --hero-rule: #1F3552;
+  --g-bplus-bg: #47C79B; --g-bplus-fg: #05231A;
+  --g-b-bg: #7FB8E8;     --g-b-fg: #0A2036;
+  --g-bminus-bg: #9BB0C8; --g-bminus-fg: #121F2E;
+  --g-cplus-bg: #E0A94A; --g-cplus-fg: #2A1B04;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--unc-ink); }
+a:focus-visible { outline: 3px solid var(--unc); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* ---------- Hero ---------- */
+.hero { background: var(--hero-bg); color: var(--hero-fg); }
+.hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 2rem 4rem;
+  align-items: end;
+  padding-block: clamp(2rem, 6vw, 4.5rem);
+}
+.hero-kicker {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: var(--hero-muted);
+  margin: 0 0 0.5rem;
+}
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3.6rem, 11vw, 7.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+  text-wrap: balance;
+}
+.hero-sub { margin: 0; color: var(--hero-muted); font-size: 1.05rem; max-width: 30rem; }
+
+.linescore { width: 100%; border-collapse: collapse; font-family: var(--font-display); font-variant-numeric: tabular-nums; }
+.linescore caption { text-align: left; color: var(--hero-muted); font-family: var(--font-body); font-size: 0.9rem; padding-bottom: 0.5rem; }
+.linescore th, .linescore td { text-align: center; padding: 0.35rem 0.25rem; }
+.linescore thead th { font-weight: 600; font-size: 1.05rem; color: var(--hero-muted); border-bottom: 1px solid var(--hero-rule); }
+.linescore thead th:first-child { text-align: left; }
+.linescore tbody th { text-align: left; font-weight: 700; font-size: 1.6rem; letter-spacing: 0.02em; }
+.linescore tbody td { font-size: 1.7rem; font-weight: 600; color: var(--hero-muted); }
+.linescore tbody td.tot { font-size: 3.4rem; font-weight: 800; line-height: 1; color: var(--hero-fg); padding-left: 0.6rem; }
+.linescore tbody tr.win th, .linescore tbody tr.win td.tot { color: var(--unc); }
+.linescore tbody tr.win td { color: var(--hero-fg); }
+.linescore tbody tr + tr th, .linescore tbody tr + tr td { border-top: 1px solid var(--hero-rule); }
+.records { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin: 1rem 0 0; padding: 0; list-style: none; font-size: 0.95rem; color: var(--hero-muted); }
+.records b { color: var(--hero-fg); font-weight: 600; }
+.byline { margin: 1.1rem 0 0; font-size: 0.95rem; color: var(--hero-muted); }
+
+/* ---------- Nav ---------- */
+.jump { border-bottom: 1px solid var(--rule); background: var(--surface); }
+.jump .wrap { display: flex; flex-wrap: wrap; gap: 0.25rem 1.75rem; padding-block: 0.8rem; }
+.jump a {
+  font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.02em;
+  text-decoration: none; color: var(--muted); padding: 0.1rem 0;
+}
+.jump a:hover { color: var(--unc-ink); text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- Sections ---------- */
+.section { scroll-margin-top: 1rem; }
+.section > .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 13rem) minmax(0, 42rem);
+  gap: 1.25rem 4.5rem;
+  padding-block: clamp(2.25rem, 5vw, 4rem);
+  border-top: 1px solid var(--rule);
+}
+.section:first-of-type > .wrap { border-top: 0; }
+h2 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem); line-height: 1; letter-spacing: 0.005em;
+  margin: 0; text-wrap: balance;
+  position: sticky; top: 1.25rem; align-self: start;
+}
+.prose { display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; }
+.prose p { margin: 0; text-wrap: pretty; }
+.lede { font-size: 1.2rem; line-height: 1.55; }
+h3 {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.55rem; line-height: 1.1; letter-spacing: 0.01em;
+  margin: 1.25rem 0 0; text-wrap: balance;
+}
+h3.q { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.2rem 1rem; padding-bottom: 0.45rem; border-bottom: 2px solid var(--unc); }
+h3.q .score { font-weight: 600; font-size: 1.2rem; color: var(--unc-ink); font-variant-numeric: tabular-nums; }
+.prose > h3:first-child { margin-top: 0; }
+
+/* ---------- Box score ---------- */
+.numbers { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.numbers .wrap {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem 4rem;
+  padding-block: clamp(2rem, 4.5vw, 3.25rem);
+}
+.numbers h2 { position: static; font-size: 1.7rem; margin-bottom: 1rem; }
+.legend { display: flex; justify-content: space-between; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.4rem; }
+.legend .u { color: var(--unc-ink); }
+.legend .o { color: var(--muted); }
+.stat { padding: 0.55rem 0; border-top: 1px solid var(--rule); }
+.stat:first-of-type { border-top: 0; }
+.stat .lbl { text-align: center; font-size: 0.88rem; color: var(--muted); line-height: 1.2; margin-bottom: 0.25rem; }
+.stat .row { display: grid; grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 1fr) 4rem; align-items: center; gap: 0 0.5rem; }
+.stat .v { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; font-variant-numeric: tabular-nums; line-height: 1; white-space: nowrap; }
+.stat .v.u { text-align: right; }
+.stat .v.o { text-align: left; color: var(--muted); }
+.stat .bar { height: 0.6rem; display: flex; }
+.stat .bar i { display: block; height: 100%; border-radius: 1px; }
+.stat .bar.l { justify-content: flex-end; }
+.stat .bar.l i { background: var(--unc); }
+.stat .bar.r i { background: var(--opp); }
+
+.plays { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.97rem; }
+.plays th { text-align: left; font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--muted); padding: 0 0.5rem 0.35rem 0; border-bottom: 1px solid var(--rule); }
+.plays th.n, .plays td.n { text-align: right; }
+.plays td { padding: 0.55rem 0.5rem 0.55rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.35; }
+.plays td.when { white-space: nowrap; color: var(--muted); width: 4.6rem; }
+.plays td.n { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; padding-right: 0; width: 2.4rem; }
+.plays td.n.lead { color: var(--unc-ink); }
+.plays .tag { font-family: var(--font-display); font-weight: 700; margin-right: 0.35rem; }
+.plays .tag.u { color: var(--unc-ink); }
+.plays .tag.o { color: var(--muted); }
+.table-scroll { overflow-x: auto; }
+
+/* ---------- Grades ---------- */
+.grade {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  min-width: 2.7rem; height: 2.7rem; padding: 0 0.45rem; border-radius: 4px;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.55rem; line-height: 1; letter-spacing: 0.01em;
+}
+.g-bplus { background: var(--g-bplus-bg); color: var(--g-bplus-fg); }
+.g-b { background: var(--g-b-bg); color: var(--g-b-fg); }
+.g-bminus { background: var(--g-bminus-bg); color: var(--g-bminus-fg); }
+.g-cplus { background: var(--g-cplus-bg); color: var(--g-cplus-fg); }
+
+.gradegrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr)); gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.gradegrid a {
+  display: flex; align-items: center; gap: 0.7rem; padding: 0.5rem 0.7rem 0.5rem 0.5rem;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 6px;
+  color: var(--fg); text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 1.15rem;
+}
+.gradegrid a:hover { border-color: var(--unc); }
+.gradegrid .grade { min-width: 2.3rem; height: 2.3rem; font-size: 1.3rem; }
+
+h3.pg { display: flex; align-items: center; gap: 0.85rem; margin-top: 1.75rem; scroll-margin-top: 1rem; }
+.keys { display: flex; flex-wrap: wrap; gap: 0.15rem 1.25rem; margin: -0.3rem 0 0; padding: 0; list-style: none; font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; color: var(--unc-ink); }
+.keys li { white-space: nowrap; }
+
+/* ---------- Report card ---------- */
+.verdict { display: flex; gap: 1.1rem; align-items: flex-start; padding: 1.1rem 1.25rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; }
+.verdict .grade { min-width: 4rem; height: 4rem; font-size: 2.4rem; }
+.verdict p { margin: 0; }
+.report { width: 100%; border-collapse: collapse; font-size: 1rem; background: var(--surface); border: 1px solid var(--rule); }
+.report th, .report td { text-align: left; padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--rule); vertical-align: middle; line-height: 1.4; }
+.report thead th { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--muted); }
+.report tbody th { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; white-space: nowrap; }
+.report td.gr { width: 4.5rem; }
+.report .grade { min-width: 2.2rem; height: 2.2rem; font-size: 1.2rem; }
+.report-wrap { overflow-x: auto; }
+
+/* ---------- Narrow ---------- */
+@media (max-width: 62rem) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .numbers .wrap { grid-template-columns: minmax(0, 1fr); }
+  .section > .wrap { grid-template-columns: minmax(0, 1fr); }
+  h2 { position: static; }
+}
+@media (max-width: 30rem) {
+  body { font-size: 1rem; }
+  .lede { font-size: 1.1rem; }
+  .linescore tbody td.tot { font-size: 2.8rem; }
+  .stat .row { grid-template-columns: 3.4rem minmax(0, 1fr) minmax(0, 1fr) 3.4rem; }
+  .report tbody th { white-space: normal; }
+}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="hero-kicker">Post-game breakdown</p>
+      <h1>UNC 24, Duke 20</h1>
+      <p class="hero-sub">Wallace Wade Stadium, Durham, Saturday, October 17, 2026.</p>
+      <p class="byline">October 18, 2026, by Matthew Zammit</p>
+    </div>
+    <div>
+      <table class="linescore">
+        <caption>Final, by quarter</caption>
+        <thead><tr><th scope="col">Team</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">F</th></tr></thead>
+        <tbody>
+          <tr class="win"><th scope="row">UNC</th><td>10</td><td>7</td><td>0</td><td>7</td><td class="tot">24</td></tr>
+          <tr><th scope="row">Duke</th><td>0</td><td>7</td><td>3</td><td>10</td><td class="tot">20</td></tr>
+        </tbody>
+      </table>
+      <ul class="records">
+        <li><b>UNC</b> 4-2, 2-1 ACC</li>
+        <li><b>Duke</b> 4-2, 1-2 ACC</li>
+        <li>35,018 in attendance</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <div class="wrap">
+    <a href="#brief">The game in brief</a>
+    <a href="#unfolded">How it unfolded</a>
+    <a href="#won">Where UNC won</a>
+    <a href="#improve">Areas for improvement</a>
+    <a href="#grades">Position grades</a>
+    <a href="#report">Report card</a>
+  </div>
+</nav>
+
+<main>
+<section class="section" id="brief">
+  <div class="wrap">
+    <h2>The Game in Brief</h2>
+    <div class="prose">
+      <p class="lede">North Carolina beat Duke 24-20 at Wallace Wade Stadium on Saturday, and it needed the last five minutes to do it. The Tar Heels led 17-0 with 13:43 left in the second quarter, then didn't score again for more than 41 minutes. Duke scored 20 straight points in that time, the last seven on Nate Sheppard's seven-yard catch with 4:39 to play. Jaylen McGill answered with a 24-yard touchdown run with 1:53 left, finishing an eight-play, 78-yard drive. Freshman Kenton Dopson III then intercepted Walker Eget with 14 seconds on the clock.</p>
+      <p>UNC is 4-2 overall and 2-1 in the ACC. The Victory Bell goes back to Chapel Hill after two years in Durham, and it's Carolina's first win at Duke since 2022. Duke falls to 4-2 (1-2 ACC), has lost two straight by a combined seven points, took its first home loss of the season and saw an eight-game winning streak against in-state opponents end. UNC was a three-point underdog (Duke -3, total 47.5, UNC +135 on the moneyline), so it covered, and the 44 combined points stayed under. It's the Tar Heels' second straight win, after the 21-17 road victory at No. 25 Pitt. Before that came losses to Clemson (28-20) and No. 3 Notre Dame (37-26).</p>
+      <p>Duke had the better numbers. It out-gained UNC 373 yards to 326, ran 71 plays to 64, held the ball 31:23 to 28:37 and converted 8 of 18 third downs to UNC's 4 of 12. It had five tackles for loss to UNC's two and five plays of 20-plus yards to UNC's two. UNC lost the turnover battle 2-1, and both of its fumbles either gave Duke points or cost Carolina a chance at them.</p>
+      <p>The Tar Heels made up for it in the key spots. Duke scored only 13 of its 20 points on offense. It got into the red zone four times and came away with a turnover on downs and two field goals (from the UNC 5 and the UNC 4) before its one touchdown. UNC converted two of three fourth downs, and in the last two minutes it got a touchdown from the offense and an interception from the defense.</p>
+      <p>It did all of this shorthanded. Starting defensive backs Kaleb Cost and Tre Miller (whose injury is feared to be season-ending) and receiver Mason Humphrey were out. Safety Greg Smith was a game-time decision and played all 75 defensive snaps. Running back Benjamin Hall left in the first quarter after four snaps. Punter Aaron Burrell's back tightened up late, so first-year Adam McCann-Gibbs was the one handling the fourth-quarter punt that went wrong.</p>
+    </div>
+  </div>
+</section>
+
+<section class="numbers" aria-label="Box score">
+  <div class="wrap">
+    <div>
+      <h2>Team stats</h2>
+      <div class="legend"><span class="u">UNC</span><span class="o">Duke</span></div>
+
+      <div class="stat"><div class="lbl">Total yards</div><div class="row"><span class="v u">326</span><span class="bar l"><i style="width:87%"></i></span><span class="bar r"><i style="width:100%"></i></span><span class="v o">373</span></div></div>
+      <div class="stat"><div class="lbl">Passing yards</div><div class="row"><span class="v u">191</span><span class="bar l"><i style="width:77%"></i></span><span class="bar r"><i style="width:100%"></i></span><span class="v o">249</span></div></div>
+      <div class="stat"><div class="lbl">Rushing yards</div><div class="row"><span class="v u">135</span><span class="bar l"><i style="width:100%"></i></span><span class="bar r"><i style="width:92%"></i></span><span class="v o">124</span></div></div>
+      <div class="stat"><div class="lbl">First downs</div><div class="row"><span class="v u">22</span><span class="bar l"><i style="width:100%"></i></span><span class="bar r"><i style="width:86%"></i></span><span class="v o">19</span></div></div>
+      <div class="stat"><div class="lbl">Third-down conversions</div><div class="row"><span class="v u">4 of 12</span><span class="bar l"><i style="width:75%"></i></span><span class="bar r"><i style="width:100%"></i></span><span class="v o">8 of 18</span></div></div>
+      <div class="stat"><div class="lbl">Fourth-down conversions</div><div class="row"><span class="v u">2 of 3</span><span class="bar l"><i style="width:100%"></i></span><span class="bar r"><i style="width:100%"></i></span><span class="v o">2 of 3</span></div></div>
+      <div class="stat"><div class="lbl">Red-zone scores</div><div class="row"><span class="v u">3 of 4</span><span class="bar l"><i style="width:100%"></i></span><span class="bar r"><i style="width:100%"></i></span><span class="v o">3 of 4</span></div></div>
+      <div class="stat"><div class="lbl">Time of possession</div><div class="row"><span class="v u">28:37</span><span class="bar l"><i style="width:91%"></i></span><span class="bar r"><i style="width:100%"></i></span><span class="v o">31:23</span></div></div>
+      <div class="stat"><div class="lbl">Penalty yards</div><div class="row"><span class="v u">6-65</span><span class="bar l"><i style="width:97%"></i></span><span class="bar r"><i style="width:100%"></i></span><span class="v o">8-67</span></div></div>
+      <div class="stat"><div class="lbl">Turnovers</div><div class="row"><span class="v u">2</span><span class="bar l"><i style="width:100%"></i></span><span class="bar r"><i style="width:50%"></i></span><span class="v o">1</span></div></div>
+    </div>
+
+    <div>
+      <h2>Scoring</h2>
+      <div class="table-scroll">
+        <table class="plays">
+          <thead><tr><th scope="col">When</th><th scope="col">Play</th><th scope="col" class="n">UNC</th><th scope="col" class="n">Duke</th></tr></thead>
+          <tbody>
+            <tr><td class="when">Q1</td><td><span class="tag u">UNC</span>Rece Verhoff 28-yard field goal</td><td class="n lead">3</td><td class="n">0</td></tr>
+            <tr><td class="when">Q1 7:21</td><td><span class="tag u">UNC</span>Jordan Shipp 5-yard catch from Billy Edwards Jr., after the blocked punt</td><td class="n lead">10</td><td class="n">0</td></tr>
+            <tr><td class="when">Q2 13:43</td><td><span class="tag u">UNC</span>Demon June 4-yard run on fourth-and-2</td><td class="n lead">17</td><td class="n">0</td></tr>
+            <tr><td class="when">Q2 8:37</td><td><span class="tag o">Duke</span>Andrew Pellicciotta 9-yard fumble return</td><td class="n lead">17</td><td class="n">7</td></tr>
+            <tr><td class="when">Q3 6:54</td><td><span class="tag o">Duke</span>22-yard field goal</td><td class="n lead">17</td><td class="n">10</td></tr>
+            <tr><td class="when">Q4 8:47</td><td><span class="tag o">Duke</span>21-yard field goal</td><td class="n lead">17</td><td class="n">13</td></tr>
+            <tr><td class="when">Q4 4:39</td><td><span class="tag o">Duke</span>Nate Sheppard 7-yard catch from Walker Eget</td><td class="n">17</td><td class="n lead">20</td></tr>
+            <tr><td class="when">Q4 1:53</td><td><span class="tag u">UNC</span>Jaylen McGill 24-yard run</td><td class="n lead">24</td><td class="n">20</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="unfolded">
+  <div class="wrap">
+    <h2>How the Game Unfolded</h2>
+    <div class="prose">
+      <p class="lede">UNC controlled the first half and Duke controlled the second. Four possessions decided it: the blocked punt, Shipp's fumble, the botched punt and the final drive.</p>
+
+      <h3 class="q"><span>First quarter</span><span class="score">UNC 10, Duke 0</span></h3>
+      <p>Duke deferred, and Billy Edwards Jr. opened with a 26-yard completion to Trech Kekahuna on the first snap from scrimmage. UNC went 74 yards in 11 plays and 4:52, with a 14-yard Jelani Thurman catch and a 12-yard Edwards scramble along the way. The drive stalled at the Duke 10 when Edwards missed on second and third down, and Rece Verhoff kicked a 28-yard field goal.</p>
+      <p>Duke's first possession went three-and-out. On fourth-and-6 from its own 22, a high snap forced punter Kade Reynoldson to improvise. Calvin Thomas blocked the kick and Jaziel Hart recovered at the Duke 11. Two McGill runs set up third-and-4, and Edwards found Jordan Shipp in the back of the end zone for a 5-yard touchdown at 7:21. At that point Carolina had 85 yards on 14 snaps and Duke had 12 yards on six.</p>
+
+      <h3 class="q"><span>Second quarter</span><span class="score">UNC 17, Duke 7 at halftime</span></h3>
+      <p>UNC's third drive was its best of the day: 14 plays, 63 yards and 7:40, stretching across the quarter break. Shipp caught a 16-yarder on third-and-13. A holding call on center Christo Kelly erased a 5-yard completion at the Duke 11, but the drive survived it. Demon June ran it in from the 4 on fourth-and-2 for his sixth touchdown of the season, and it was 17-0 at 13:43.</p>
+      <p>Duke's first real answer went eight plays and 73 yards. Jonah Burton had a 28-yard catch on third-and-7, and CJ Campbell ran 33 yards before Greg Smith III forced him out of bounds at the UNC 11. Then the drive died at the goal line. Campbell lost a yard to Nicco Maggio. Derek McDonald broke up a pass to Jake Taylor. An offside call on Xavier Lewis turned third-and-11 into third-and-6, and Jeremiah Hasley caught a 5-yard pass to the 2. On fourth-and-1, Smith met Campbell in the hole.</p>
+      <p>Carolina took over at its own 2. On third-and-7, Edwards hit Shipp for a short gain near the 10, Kyon Loud punched the ball out, and Andrew Pellicciotta picked it up at the 9 and ran it in for a touchdown with 8:37 left. It was 17-7.</p>
+      <p>The defenses took over from there. UNC punted twice, after five plays for 10 yards and then six plays for 12. The second of those drives was killed by another Kelly holding penalty, which wiped out a 19-yard Shipp catch and turned first-and-10 at the UNC 21 into first-and-20 at the 11. Duke got the ball back with 56 seconds left and went 39 yards in seven plays, converting a fourth-and-1 on a 15-yard Sheppard catch, but time ran out at the UNC 26. At the break UNC had held the ball for 20:24 to Duke's 9:23, and Walker Eget had 94 passing yards.</p>
+
+      <h3 class="q"><span>Third quarter</span><span class="score">UNC 17, Duke 10</span></h3>
+      <p>Duke opened the second half with the longest drive of the day: 19 plays, 62 yards and 8:06. It included a fourth-and-1 conversion on a 13-yard Nate Sheppard run to the UNC 18. The goal-line defense held again from the 5. Sheppard was stopped for no gain. Smith broke up a pass to Hasley while Peyton Seelmann and Jaylen Harvey closed on Eget, and Coleman Bryson broke up the next one, to Jayden Moore. Duke settled for a 22-yard field goal with 6:54 left to make it 17-10.</p>
+      <p>Carolina's answer looked like the offense that built the lead. Shipp caught passes of 16 and 14 yards, Shamar Easter caught one for 15 and Thurman added 12. A Duke personal foul put UNC at the Duke 11 after six plays. On first-and-10, McGill took a handoff up the middle, Patrick Smith-Young stripped it, and Duke recovered at its own 9. The defense forced a punt, but UNC's next series went three-and-out from its own 15. The quarter ended with the Tar Heels' offense stuck and Duke's tilting the field.</p>
+
+      <h3 class="q"><span>Fourth quarter</span><span class="score">UNC 24, Duke 20</span></h3>
+      <p>The fourth began with an Edwards sack and a punt, and Duke started at the UNC 36 after a 15-yard Pellicciotta return. A Duke pass-interference penalty set up second-and-19, and Jared Richardson caught a 23-yard pass on it. After that the defense stiffened. It held Sheppard to runs of 5, 4, 5, 2 and 2 yards inside the 25, forced an incompletion under pressure from Melkart Abou Jaoude, and took a 21-yard Duke field goal on fourth-and-4 from the 4. That made it 17-13 with 8:47 left, after nine plays, 32 yards and 5:24.</p>
+      <p>UNC's chance to put the game away fell apart in slow motion. A 15-yard unsportsmanlike penalty on Pellicciotta moved the ball to the UNC 45, but Edwards threw two incompletions and ran for five on third-and-10. On fourth-and-5 from its own 50 with 7:48 left, and Burrell out, the punt snap was mishandled and Adam McCann-Gibbs was tackled for a 16-yard loss. Duke had the ball at the UNC 34. Five plays later Eget threw a 7-yard touchdown to Sheppard, and a 15-yard unsportsmanlike flag on Leroy Jackson moved Duke's kickoff up to midfield. It was 20-17 Duke with 4:39 left.</p>
+      <p>The winning drive began at the UNC 22 after a short kick return. Edwards scrambled for 6, then missed Shipp and Nyqir Helton on second and third down. On fourth-and-4 from the 28, at 3:48, he found Thurman over the middle for 12. McGill ran for 16 up the middle and for 4 more, and Edwards hit Kekahuna for 16 on second-and-6 to the Duke 24. After a timeout at 2:00, McGill took a handoff left, found a lane and ran 24 yards untouched into the end zone at 1:53.</p>
+      <p>Duke had one more chance and nearly used it. Sheppard carried three times for 13 yards. Kenton Dopson III picked off a pass at the UNC 30, but his own pass-interference penalty wiped it out and put the ball at the UNC 47. Sheppard's 8-yard run got Duke to the UNC 30 with 28 seconds left. Then Lewis and Seelmann got to Eget, who threw it away and was flagged for intentional grounding, which pushed Duke back to the UNC 44. A 10-yard completion to Moore made it third-and-14 from the UNC 34. Lewis hurried Eget again, and this time Dopson came down with the ball at the UNC 15 with 14 seconds left. Edwards took a knee.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="won">
+  <div class="wrap">
+    <h2>Where UNC Won the Game</h2>
+    <div class="prose">
+      <p class="lede">Six things decided this game for UNC, and most of them don't show up in the box score.</p>
+
+      <h3>An early lead built on efficiency and one gift</h3>
+      <p>UNC scored on each of its first three possessions: 74 yards in 11 plays for a field goal, 11 yards in three plays for a touchdown after the blocked punt, and 63 yards in 14 plays for another touchdown. The block started with a high snap, and Carolina turned 11 yards of field into seven points. The other two drives were earned. Kekahuna's 26-yard catch on the first snap, Edwards's 12-yard scramble and a 16-yard Shipp catch on third-and-13 set the tone. UNC was 4-of-9 on third down in the first half and held the ball for 20:24 of the first 30 minutes. Duke's first-half possessions ended in a punt, a punt, a turnover on downs, a punt and the clock, and Eget had 94 passing yards at the break.</p>
+
+      <h3>Goal-line and red-zone defense</h3>
+      <p>Duke got inside the UNC 10 on three long drives and scored six points. The first ended when Smith stopped Campbell on fourth-and-1 from the 2. The second was the 19-play, 62-yard, 8:06 drive to open the third quarter. It ended with Sheppard stuffed for no gain, a Smith breakup, a Bryson breakup and a 22-yard field goal. The third, nine plays and 32 yards in the fourth quarter, ended with a Sheppard run for 2, an incompletion under pressure from Abou Jaoude, a stop by McDonald and Leroy Jackson on third-and-6 and a 21-yard field goal.</p>
+      <p>Over those three drives Duke ran 36 plays for 167 yards. Its only touchdowns came on a scoop-and-score and a 34-yard field after a botched punt. Belichick credited getting enough bodies around the ball, and he said Duke's red-zone scheme, including a crossing pick pattern, caused real problems.</p>
+
+      <h3>Turning Sheppard into a pass-catcher</h3>
+      <p>UNC only partly won this one. Sheppard, the nation's leading rusher, was a game-time decision and ran for 77 yards on 20 carries, 3.9 per carry, a season low, with a long of 13. He also caught 11 passes for 98 yards and a touchdown, touched the ball 31 times and had 175 yards from scrimmage. Belichick said UNC expected the swing screens, got burned on a couple and missed a tackle on him in space.</p>
+      <p>Duke didn't get a 150-yard rusher, though, and it had to throw. Eget went 24-of-38 for 249 yards, 6.6 per attempt and 10.4 per completion, with one touchdown. The bigger rushing damage came from Campbell, who gained 61 yards on nine carries behind a 33-yard run.</p>
+
+      <h3>Fourth-down aggression</h3>
+      <p>UNC went 2-for-3 on fourth down, and both conversions mattered. Going for it on fourth-and-2 from the Duke 4 in the second quarter made it 17-0 instead of a possible 13-0. The fourth-and-4 completion to Thurman from the UNC 28 at 3:48 kept the winning drive alive. The third attempt was the botched punt snap, which the box score counts as a failed conversion. Belichick said he wasn't going to punt again after how the earlier one went: “I wasn't punting again.” UNC had just gone 0-for-3 on third down in the second half, and going for it paid off.</p>
+
+      <h3>Edwards and the closing drive</h3>
+      <p>The winning drive took 2:41 and eight plays, and it was built on the run and on quick throws. Edwards scrambled for 6 on the first snap and went 2-of-4 for 28 yards through the air. McGill carried three times for 44 of the 78 yards, including the 24-yard score. Belichick pointed to Edwards sliding up in the pocket against a good Duke pass rush and to his tackles riding the ends past the quarterback. It was UNC's best sustained offense after the first quarter, and it came against a defense Belichick called one of the best in the country.</p>
+
+      <h3>Pressure and a ball hawk at the finish</h3>
+      <p>Duke needed about 75 yards in 1:53. UNC's defense gave up some chunks, including Sheppard's runs of 8 and 8 and the 15-yard pass-interference flag on Dopson that wiped out his own interception, but it got home when it mattered. Lewis, a midseason first-team All-American who played 71 snaps, hurried Eget on the intentional-grounding play and again on the final throw, and Seelmann was in his face on the grounding too. Dopson's interception was his first career pick and only Eget's second of the season.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="improve">
+  <div class="wrap">
+    <h2>Areas for Improvement</h2>
+    <div class="prose">
+      <p class="lede">UNC's problems were concentrated in a few places, which makes them fixable. They also nearly cost the Tar Heels a game they led 17-0.</p>
+
+      <h3>A 41-minute offensive drought</h3>
+      <p>Between June's touchdown that made it 17-0 and McGill's touchdown that made it 24-20, UNC had six possessions. They ended in a fumble returned for a touchdown, a punt, a punt, a fumble at the Duke 9, a punt and a turnover on downs. The Tar Heels gained only about 100 yards in that stretch. They went 0-for-3 on third down in the second half and, by the drive chart, ran roughly 23 snaps after halftime to Duke's 48, holding the ball for about 8 minutes of the half's 30. Two of those possessions, the three-and-out from the 15 and the five-play series after the Pellicciotta penalty, lost 12 yards on eight plays. That won't work against Syracuse or Miami.</p>
+
+      <h3>Ball security</h3>
+      <p>UNC lost two fumbles and Duke lost none. Shipp's came on a short catch from deep in his own territory, when Kyon Loud forced it out, and Duke turned it into a seven-point defensive touchdown. McGill's came at the Duke 9 at the end of a six-play, 66-yard drive that answered Duke's field goal and had UNC a few snaps from another two-score lead. Together they were a potential 14-point swing. Both came on routine touches, with a defender stripping or punching the ball out.</p>
+
+      <h3>Penalties and pass protection</h3>
+      <p>UNC was flagged six times for 65 yards, and the three offensive-line holding calls hurt the most. Kelly's first erased a 5-yard completion at the Duke 11. Alvarez's erased a 4-yard run and turned first-and-10 into first-and-20. Kelly's second wiped out a 19-yard Shipp catch and left UNC at first-and-20 from its own 11, and the drive ended in a punt.</p>
+      <p>On defense, Dopson's pass interference gave Duke 15 yards and a first down in the final two minutes. Lewis's offside gave Duke a free five on third-and-11 from the UNC 12. Jackson's 15-yard unsportsmanlike flag after Duke's go-ahead touchdown was avoidable, on an afternoon UNC couldn't afford to give anything away.</p>
+      <p>Edwards was sacked twice and hurried five times, which is seven pressures on 27 dropbacks (26 percent). Duke finished with five tackles for loss to UNC's two.</p>
+
+      <h3>The punt operation</h3>
+      <p>The botched punt in the fourth quarter was the most expensive mistake of the day. UNC led 17-13 and was about to punt from its own 50. Instead Duke got the ball at the UNC 34 and scored the go-ahead touchdown five plays later. Burrell, who punted three times for 125 yards (41.7 average) with none inside the 20, was out with a tight back, so first-year McCann-Gibbs was thrown into a high-leverage rep.</p>
+      <p>Even before that, Burrell's 42-yard punt from the UNC 9 in the fourth quarter netted just 27 after a 15-yard Pellicciotta return, and Duke's punter put two of his three inside the 20. UNC needs to know whether Burrell will be available Saturday night, and the snap-to-kick operation has to be clean.</p>
+
+      <h3>Tackling in space and explosive plays</h3>
+      <p>UNC allowed five plays of 20-plus yards (28, 33, 23, 24 and 23) and had two of its own (26 and 24). Campbell's 33-yarder set up first-and-10 at the UNC 11. Sheppard caught 11 balls on swing screens and underneath routes, and Duke converted 8 of 18 third downs. The defense kept enough in front of it to survive, but not by much.</p>
+
+      <h3>Receiver usage and depth</h3>
+      <p>The passing game ran almost entirely through Shipp, Thurman and Kekahuna, who had 13 of the 15 catches and 169 of the 191 yards. C.J. Sadler and Nyqir Helton played 63 snaps between them and combined for one catch and 7 yards. With Mason Humphrey out, the third and fourth receivers have to give Edwards more.</p>
+      <p>The secondary was just as thin. Cost, Miller and Jakob Weatherspoon were out, Peyton Waters, a listed starter, logged only three snaps, and two first-year players, Dopson and Hart, had key roles. Smith and Jaiden Patterson each played 75 snaps, Lewis played 71 and McDonald 70, and the defense was on the field for about 48 snaps in the second half. That's a lot to ask of the same players two weeks in a row.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="grades">
+  <div class="wrap">
+    <h2>Position Group Breakdown and Grades</h2>
+    <div class="prose">
+      <p class="lede">These grades come from the box score, the play-by-play and the snap counts, not from film. Blocking and coverage are judged by results rather than technique.</p>
+
+      <ul class="gradegrid">
+        <li><a href="#g-qb"><span class="grade g-b">B</span>Quarterback</a></li>
+        <li><a href="#g-rb"><span class="grade g-bminus">B-</span>Running backs</a></li>
+        <li><a href="#g-te"><span class="grade g-b">B</span>Tight ends</a></li>
+        <li><a href="#g-wr"><span class="grade g-bminus">B-</span>Wide receivers</a></li>
+        <li><a href="#g-ol"><span class="grade g-cplus">C+</span>Offensive line</a></li>
+        <li><a href="#g-dl"><span class="grade g-bminus">B-</span>Defensive line</a></li>
+        <li><a href="#g-lb"><span class="grade g-bplus">B+</span>Linebackers</a></li>
+        <li><a href="#g-cb"><span class="grade g-bminus">B-</span>Cornerbacks</a></li>
+        <li><a href="#g-s"><span class="grade g-bplus">B+</span>Safeties</a></li>
+        <li><a href="#g-st"><span class="grade g-cplus">C+</span>Special teams</a></li>
+      </ul>
+
+      <h3 class="pg" id="g-qb"><span class="grade g-b">B</span>Quarterback</h3>
+      <ul class="keys"><li>66 snaps</li><li>15 of 25</li><li>191 yards</li><li>1 TD, 0 INT</li></ul>
+      <p>Billy Edwards Jr. played all 66 snaps and went 15-of-25 for 191 yards (7.6 per attempt, 12.7 per completion) with one touchdown, no interceptions and a long of 26. He was 9-of-14 for 106 yards in the first half and 6-of-11 for 85 in the second, 28 of those on the winning drive. He was sacked twice and scrambled seven times for 32 yards (12, 6, 5, 3, 3, 2 and 1), and his net rushing total of 20 includes 12 yards in sack losses. Belichick praised his pocket presence, and it showed on the last drive, when he slid up and got the ball out quickly against a good Duke rush. The knocks are two missed throws inside the Duke 10 on the opening drive that turned a touchdown chance into a field goal, and an 0-for-3 second half on third down.</p>
+
+      <h3 class="pg" id="g-rb"><span class="grade g-bminus">B-</span>Running backs</h3>
+      <ul class="keys"><li>McGill 12 for 75, TD</li><li>June 13 for 49, TD</li><li>4.7 yards per carry</li></ul>
+      <p>Jaylen McGill (33 snaps) ran 12 times for 75 yards (6.2 per carry), including the 24-yard winner and three carries for 44 yards on the last drive. He also lost the fumble at the Duke 9. Demon June (31 snaps) ran 13 times for 49 yards (3.8) and scored from the 4 on fourth-and-2, but he lost 2 yards in the second quarter and was stopped for no gain at the end of the third. Benjamin Hall played four snaps (two carries, seven yards) before leaving. Peter Pesansky took one snap at fullback and Kaleb Jackson had one carry. The backs had no receptions. Excluding sacks, the botched punt and a kneel-down, they averaged 4.7 yards per carry (28 for 132). That's solid, but McGill's fumble drags the grade down.</p>
+
+      <h3 class="pg" id="g-te"><span class="grade g-b">B</span>Tight ends</h3>
+      <ul class="keys"><li>Thurman 64 snaps</li><li>4 catches, 52 yards</li></ul>
+      <p>Jelani Thurman played 64 snaps and caught four of seven targets for 52 yards. His catches went for 14, 14, 12 and 12 yards, and each moved the chains or sustained a drive, including the fourth-and-4 conversion on the winning drive. Shamar Easter (11 snaps) caught a 15-yard pass, Carson Sneed played 10 snaps and Jordan Washington three while listed as questionable. The snap counts suggest UNC lived in three-wide sets with Thurman as the only tight end, so much of the group's value is in blocking, which the box score can't grade.</p>
+
+      <h3 class="pg" id="g-wr"><span class="grade g-bminus">B-</span>Wide receivers</h3>
+      <ul class="keys"><li>Shipp 7 for 75, TD</li><li>Kekahuna 2 for 42</li><li>Sadler 1 for 7</li></ul>
+      <p>Jordan Shipp (66 snaps) caught seven passes for 75 yards and his first touchdown of the season, converted a third-and-13 and was Edwards's most reliable target. His fumble was a seven-point swing, and two other catches (5 and 19 yards) were erased by holding calls. Trech Kekahuna (43) caught two for 42 yards, 26 and 16, and both changed drives. C.J. Sadler (43) caught one for 7 yards. Nyqir Helton (20) was targeted on the third-and-4 of the final drive and didn't come down with it. With Humphrey out, the third and fourth receivers gave UNC almost nothing, and that's the weakest part of this offense.</p>
+
+      <h3 class="pg" id="g-ol"><span class="grade g-cplus">C+</span>Offensive line</h3>
+      <ul class="keys"><li>5 starters, 66 snaps each</li><li>3 holding penalties</li><li>2 sacks, 5 tackles for loss allowed</li></ul>
+      <p>All five starters played all 66 snaps: Andrew Threatt at left tackle, Aidan Banfield at left guard, Christo Kelly at center, Cristian Alvarez at right guard and Jacqawn McRoy at right tackle. There was good work. The backs averaged 4.7 yards per carry, the 14-play touchdown drive and the winning drive both leaned on the line, and Belichick credited the tackles for riding Duke's ends past Edwards on the closing march. But Duke had five tackles for loss, two sacks and five more hurries, and the line committed three holding penalties (two by Kelly, one by Alvarez). Each cost 10 yards and a gain, including the 19-yard Shipp catch that killed a promising drive. Too many drives died because of the line.</p>
+
+      <h3 class="pg" id="g-dl"><span class="grade g-bminus">B-</span>Defensive line</h3>
+      <ul class="keys"><li>Lewis 71 snaps</li><li>1 sack, 2 tackles for loss as a group</li><li>Duke backs 4.8 per carry</li></ul>
+      <p>Xavier Lewis (71 snaps) had two assisted tackles, half a sack for 7 yards, half a tackle for loss and two hurries, and his pressure on the last two Duke snaps mattered most. Nicco Maggio (45 snaps) had two tackles, one for loss. Isaiah Johnson (20, questionable pregame) had no stats, and Trey Giddens (8) had a hurry. On the edges, Melkart Abou Jaoude (66 snaps) had an assist and a hurry, Leroy Jackson (61) made seven tackles but took the unsportsmanlike flag, Jaylen Harvey (51) had four assists and a hurry, and Donovan Hoilette Jr. (9) had a hurry. As a group the line had one sack and two tackles for loss, none from an edge rusher. It held Sheppard to 3.9 yards per carry, but Duke's backs averaged 4.8 (29 for 138) with the 33-yard breakaway, and the pass rush made Eget uncomfortable without finishing. The interior played better than the edges.</p>
+
+      <h3 class="pg" id="g-lb"><span class="grade g-bplus">B+</span>Linebackers</h3>
+      <ul class="keys"><li>Seelmann 16 tackles</li><li>McDonald 7 tackles, 70 snaps</li></ul>
+      <p>Peyton Seelmann (62 snaps) had a season-high 16 tackles (seven solo), half a sack for 7 yards and a hurry, and he was in the middle of both red-zone stands. Derek McDonald (70) had seven tackles and a pass breakup inside the 10. Jonathan Agumadu (13) had three tackles and a breakup, Timir Hickman-Collins (12) had three tackles, David Jackson III played two snaps and Calvin Thomas one, plus the blocked punt on special teams. The tackle volume and the goal-line work were excellent. The deduction comes from Sheppard's 11 catches, many on swing screens and underneath routes the linebackers have to cover and tackle in space.</p>
+
+      <h3 class="pg" id="g-cb"><span class="grade g-bminus">B-</span>Cornerbacks</h3>
+      <ul class="keys"><li>Patterson 75 snaps</li><li>Dopson 7 tackles, INT</li><li>Eget 24 of 38, 249 yards</li></ul>
+      <p>Jaiden Patterson (75 snaps) had three solo tackles and a pass breakup. Kenton Dopson III (65) made seven tackles and the clinching interception, but his pass interference erased his first pick. Khristian Dunbar-Hawkins (14), Jalon Thompson (8) and nickel Ade Willie (17, two tackles) filled in, with Cost, Miller and Weatherspoon out. Eget completed 24-of-38 for 249 yards but threw only one touchdown, had 94 yards in the first half, and no Duke catch went longer than 28 yards. Given how thin the group was, that's acceptable, though the middle of the field was exposed at times.</p>
+
+      <h3 class="pg" id="g-s"><span class="grade g-bplus">B+</span>Safeties</h3>
+      <ul class="keys"><li>Smith 75 snaps, 10 tackles, 2 breakups</li><li>Bryson 54 snaps, 4 tackles</li></ul>
+      <p>Greg Smith III, a game-time decision, played all 75 snaps and was the most important player in the secondary. He had ten tackles (five solo), two breakups, the fourth-and-1 stop at the 2 and a breakup in the third-quarter goal-line stand. Coleman Bryson (54) had four tackles and a breakup on third-and-5 at the goal line. Javion Butts (21) had two tackles, and Peyton Waters, a listed starter, played three snaps and made two tackles, which suggests he left early. Belichick said Smith stepped up when another player went out early and called him better every week. This was the steadiest group on the field.</p>
+
+      <h3 class="pg" id="g-st"><span class="grade g-cplus">C+</span>Special teams</h3>
+      <ul class="keys"><li>Blocked punt, 7 points</li><li>Burrell 3 punts, 41.7 average</li><li>Verhoff 1 of 1 FG, 3 of 3 PAT</li></ul>
+      <p>Calvin Thomas's blocked punt and Jaziel Hart's recovery were worth seven points. Rece Verhoff was 1-for-1 on field goals (28 yards) and 3-for-3 on extra points, and his only kickoff, after the winning touchdown, went through the end zone. Burrell averaged 41.7 on three punts with none inside the 20, and the botched snap in the fourth quarter cost UNC the lead. The return game didn't help. Kekahuna returned a punt three yards, Thomas 11, and kickoff returns averaged 12.0 against Duke's 17.0. Pellicciotta's 15-yard punt return flipped the field in the fourth quarter.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="report">
+  <div class="wrap">
+    <h2>Report Card and What It Means Going Forward</h2>
+    <div class="prose">
+      <div class="verdict">
+        <span class="grade g-b">B</span>
+        <p>UNC earns an overall B. The defense carried the final result, the offense made the last big play, and the special-teams and penalty problems are the ones most likely to cost the Tar Heels against better opponents.</p>
+      </div>
+
+      <div class="report-wrap">
+        <table class="report">
+          <thead><tr><th scope="col">Group</th><th scope="col">Grade</th><th scope="col">Deciding factor</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Quarterback</th><td class="gr"><span class="grade g-b">B</span></td><td>15-of-25, 191 yards, a TD and no turnovers; poised on the final drive</td></tr>
+            <tr><th scope="row">Running backs</th><td class="gr"><span class="grade g-bminus">B-</span></td><td>4.7 yards per carry and the game-winner, offset by McGill's fumble</td></tr>
+            <tr><th scope="row">Tight ends</th><td class="gr"><span class="grade g-b">B</span></td><td>Thurman's four catches all moved or sustained drives</td></tr>
+            <tr><th scope="row">Wide receivers</th><td class="gr"><span class="grade g-bminus">B-</span></td><td>Shipp, Thurman and Kekahuna produced 169 of 191 yards; everyone else was quiet</td></tr>
+            <tr><th scope="row">Offensive line</th><td class="gr"><span class="grade g-cplus">C+</span></td><td>Three holds, two sacks, five tackles for loss allowed; strong on the last drive</td></tr>
+            <tr><th scope="row">Defensive line</th><td class="gr"><span class="grade g-bminus">B-</span></td><td>One sack, no edge production, but good interior pressure when it mattered</td></tr>
+            <tr><th scope="row">Linebackers</th><td class="gr"><span class="grade g-bplus">B+</span></td><td>Seelmann's 16 tackles and two goal-line stands</td></tr>
+            <tr><th scope="row">Cornerbacks</th><td class="gr"><span class="grade g-bminus">B-</span></td><td>Held Eget to 6.6 yards per attempt, but thin and a costly PI</td></tr>
+            <tr><th scope="row">Safeties</th><td class="gr"><span class="grade g-bplus">B+</span></td><td>Smith's 10 tackles and two breakups, steady all afternoon</td></tr>
+            <tr><th scope="row">Special teams</th><td class="gr"><span class="grade g-cplus">C+</span></td><td>Blocked punt versus the botched punt that gave Duke the lead</td></tr>
+            <tr><th scope="row">Coaching and game management</th><td class="gr"><span class="grade g-b">B</span></td><td>Aggressive on fourth down, but the second-half offense stalled</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Syracuse visits Kenan Stadium on Saturday, October 24 at 7:30 p.m. on the ACC Network. Miami, ranked No. 3 going into the weekend, follows on October 31, also in Chapel Hill. The win over Duke was Belichick's first against Duke, Wake Forest or NC State; UNC lost all three last season. It also gives Carolina its first chance at a three-game winning streak under him.</p>
+      <p>Before Miami, UNC has to fix what nearly cost it this game: ball security, holding penalties, the punt snap and the second-half offensive plan. The health questions are Hall and Burrell, and how a secondary without Cost and Miller holds up when its starters play every snap. A team that has won two straight road games as an underdog is more dangerous than 4-2 suggests, if it cleans those up.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+</body></html>
